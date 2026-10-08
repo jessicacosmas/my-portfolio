@@ -1,0 +1,995 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ================================================================
+       JESSICA OGBODO PORTFOLIO - Social Media Manager & Strategist - single-page portfolio
+
+       FILES
+         index.html          this file - markup only, no styles or scripts
+         src/input.css       Tailwind CSS v4 source (tokens + components)
+         assets/css/site.css compiled CSS (committed - do not hand-edit)
+         assets/js/main.js   all page behaviour
+         README.md           the full editing + deploy guide
+
+       --- HOW TO EDIT (5 quick jobs) ---------------------------------
+       1. TEXT / NUMBERS -> search this file for  [PLACEHOLDER]
+       2. COLOURS        -> src/input.css, the @theme "DESIGN TOKENS" block
+       3. IMAGES         -> search this file for  IMG:    (every image slot)
+       4. LINKS          -> search this file for  LINK:
+       5. FONTS          -> search this file for  Google Fonts
+
+       After changing src/input.css you must run:   npm run build
+
+       Design reference: Moodboard/Portfolio inspiration.jpg
+       Sections: Hero / About / Services / Case studies / Results /
+                 Process / Testimonials / Contact
+       ================================================================ -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ------------------ SEO basics (edit these 3 lines) ------------------ -->
+  <title>Jessica Ogbodo Portfolio | Social Media Manager &amp; Strategist</title>
+  <meta name="description" content="Social media manager and strategist helping founders and professionals build a personal brand on LinkedIn, TikTok and Instagram. Strategy, content and reporting." />
+  <meta name="author" content="Jessica Ogbodo" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="[PLACEHOLDER: https://your-domain.com/]" />
+
+  <!-- ---------- Open Graph (LinkedIn / WhatsApp link previews) ---------- -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jessica Ogbodo Portfolio" />
+  <meta property="og:title" content="Jessica Ogbodo Portfolio | Social Media Manager &amp; Strategist" />
+  <meta property="og:description" content="I build personal brands people actually follow - strategy, content and reporting for LinkedIn, TikTok and Instagram." />
+  <meta property="og:url" content="[PLACEHOLDER: https://your-domain.com/]" />
+  <meta property="og:image" content="[PLACEHOLDER: https://your-domain.com/og-image.jpg]" />
+  <meta property="og:image:alt" content="JESSICA OGBODO PORTFOLIO - Social Media Manager and strategist" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ---------- Twitter / X card ---------- -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jessica Ogbodo Portfolio | Social Media Manager &amp; Strategist" />
+  <meta name="twitter:description" content="I build personal brands people actually follow - LinkedIn, TikTok and Instagram." />
+  <meta name="twitter:image" content="[PLACEHOLDER: https://your-domain.com/og-image.jpg]" />
+  <meta name="twitter:site" content="[PLACEHOLDER: @yourhandle]" />
+
+  <!-- Browser UI colour on mobile -->
+  <meta name="theme-color" content="#2E1065" />
+
+  <!-- Favicon: the purple "A" monogram, drawn inline so there is no extra file -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%236D28D9'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EA%3C/text%3E%3Ccircle cx='26' cy='6' r='3' fill='%23C6A15B'/%3E%3C/svg%3E" />
+
+  <!-- ------------------ Google Fonts (headings: Playfair Display / body: Inter) ------------------ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ------------------ Structured data (helps Google show you as a person/brand) ------------------ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jessica Ogbodo",
+    "jobTitle": "Social Media Manager and Strategist",
+    "description": "Social media manager and strategist helping professionals build a personal brand on LinkedIn, TikTok and Instagram.",
+    "url": "[PLACEHOLDER: https://your-domain.com/]",
+    "email": "Jessicacosmas6610@gmail.com",
+    "worksFor": { "@type": "Organization", "name": "Ascent Innovation Lab" },
+    "alumniOf": { "@type": "EducationalOrganization", "name": "Ascent Innovation Lab - AI, Machine Learning and Virtual Reality programme" },
+    "knowsAbout": ["Social media strategy", "Content calendars", "Account audits", "Analytics and reporting", "Personal brand growth", "LinkedIn", "TikTok", "Instagram"],
+    "sameAs": [
+      "https://www.linkedin.com/in/jessica-ogbodo-6248ab379"
+    ]
+  }
+  </script>
+
+<!-- ------------------ Stylesheet ------------------
+         Compiled from src/input.css by Tailwind CSS v4.
+         Do NOT edit assets/css/site.css by hand - run:  npm run build
+         ----------------------------------------------------------- -->
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- If JavaScript is switched off, show the animated sections straight away
+     instead of leaving them invisible. -->
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+
+<!-- ==================================================================
+     STICKY NAVIGATION
+     To add/remove a section: edit the list below AND the footer list.
+     ================================================================== -->
+<header class="nav" id="site-nav">
+  <div class="shell nav__inner">
+
+    <a class="brand" href="#home" aria-label="Jessica Ogbodo Portfolio - back to top">
+      <span class="brand__mark" aria-hidden="true">J</span>
+      <span class="brand__name">
+        <b>JESSICA OGBODO PORTFOLIO</b>
+        <small>Social Media Manager</small>
+      </span>
+    </a>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+      <span class="sr-only">Menu</span>
+      <!-- shown while the menu is closed -->
+      <svg class="nav__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
+      <!-- shown while the menu is open -->
+      <svg class="nav__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+    </button>
+
+    <nav class="nav__menu" id="primary-menu" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+      <a class="btn btn--primary nav__cta" href="#contact">Book a call</a>
+    </nav>
+
+  </div>
+</header>
+<main id="main">
+
+<!-- ==================================================================
+     1. HERO - the 10-second pitch: headline, one-line promise,
+     two buttons, three proof points.
+     ================================================================== -->
+<section class="hero" id="home">
+  <div class="shell hero__grid">
+
+    <div class="hero__copy">
+      <p class="eyebrow reveal">Social Media Manager &amp; Strategist</p>
+      <h1 class="text-balance reveal reveal--d1">I turn quiet profiles into <em>brands people follow</em>.</h1>
+      <p class="hero__lede reveal reveal--d2">
+        I position your brand and turn social media attention into trust, opportunities and action.
+      </p>
+
+      <div class="hero__actions reveal reveal--d3">
+        <a class="btn btn--primary" href="#work">
+          View my work
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+        <a class="btn btn--ghost" href="#contact">Book a call</a>
+      </div>
+
+      <!-- EDIT: three quick proof points. Replace the numbers and the captions. -->
+      <div class="hero__proof reveal reveal--d3">
+        <div class="proof__item">
+          <b>30+</b>
+          <small>brands managed across LinkedIn, TikTok, Facebook and Instagram</small>
+        </div>
+        <div class="proof__item">
+          <b>36K</b>
+          <small>views on a single cohort announcement TikTok</small>
+        </div>
+        <div class="proof__item">
+          <b>100+ leads &#183; 86 conversions</b>
+          <small>driven by social content</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__media reveal reveal--d2">
+      <div class="hero__photo">
+        <!-- IMG: hero portrait.
+             The frame is 4:5, so this taller photo is cropped top and bottom;
+             h-full/w-full are required - Tailwind's Preflight sets
+             img{height:auto}, which would otherwise let the image render at
+             its natural height and be hard-clipped by the frame instead of
+             being cropped smoothly by object-fit.
+             object-[50%_20%] keeps the face in view. When you swap in your
+             own image, update the width/height to its real pixel size. -->
+        <img src="images/hero.jpg"
+             alt="Jessica Ogbodo, social media manager and strategist"
+             width="485" height="867"
+             class="absolute inset-0 h-full w-full object-cover object-[50%_20%]" />
+      </div>
+      <p class="hero__badge hero__badge--tl">
+        <b>100+ leads &#183; 86 conversions</b>
+        driven by social content campaigns
+      </p>
+      <p class="hero__badge hero__badge--br">
+        <b>36K views</b>
+        on a single cohort announcement TikTok
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Decorative tagline strip (moodboard: Strategy / Consistency / Growth).
+     It is aria-hidden, so screen readers skip it. -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group"><span>Strategy</span><span>&#183;</span><span>Consistency</span><span>&#183;</span><span>Growth</span><span>&#183;</span><span>LinkedIn</span><span>&#183;</span><span>TikTok</span><span>&#183;</span><span>Instagram</span><span>&#183;</span></div>
+    <div class="marquee__group"><span>Strategy</span><span>&#183;</span><span>Consistency</span><span>&#183;</span><span>Growth</span><span>&#183;</span><span>LinkedIn</span><span>&#183;</span><span>TikTok</span><span>&#183;</span><span>Instagram</span><span>&#183;</span></div>
+  </div>
+</div>
+<!-- ==================================================================
+     2. ABOUT ME - short bio, photo, four quick facts.
+     Name and photo are in place. The four facts below still have placeholders.
+     ================================================================== -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <p class="section-num">01</p>
+      <p class="eyebrow">About me</p>
+      <h2 id="about-title">Strategy first. Consistency always.</h2>
+      <p class="section-sub">
+        I do not post for the sake of posting. Every account I run starts with a clear goal, a defined
+        audience and a content system that still holds up in week eight.
+      </p>
+    </header>
+
+    <div class="about__grid">
+
+      <div class="about__media reveal">
+        <div class="about__photo">
+          <!-- IMG: about portrait. The frame is 4:5, so this wider shot is
+               cropped left and right. h-full/w-full are required - Tailwind's
+               Preflight sets img{height:auto}, which would otherwise let the
+               image render at its natural height and be hard-clipped by the
+               frame instead of being cropped smoothly by object-fit.
+               object-right keeps her face in view; width/height match the
+               file's real pixel size. -->
+          <img src="images/about.jpg"
+               alt="Jessica Ogbodo, social media manager and strategist, working at her laptop"
+               width="1085" height="896"
+               class="absolute inset-0 h-full w-full object-cover object-right" />
+        </div>
+        <p class="about__caption">
+          <b>JESSICA OGBODO</b>
+          <small>Social media manager and strategist</small>
+        </p>
+      </div>
+
+      <div class="about__copy">
+        <!-- Keep this to 3 short paragraphs. People skim. -->
+        <p class="reveal">
+          I&#8217;m Jessica, a Social Media Manager and content architect with hands-on experience
+          managing Instagram, LinkedIn, Facebook, and TikTok for brands.
+        </p>
+        <p class="reveal">
+          I specialize in content creation, social media strategy, community engagement, video
+          editing, and content strategy designed to grow brands and elevate their online presence.
+        </p>
+        <p class="reveal">
+          My creative toolkit includes Canva for scroll-stopping visuals, CapCut for sleek video
+          editing, Pinterest for creative inspiration, and Google Workspace for efficient workflow
+          and collaboration.
+        </p>
+
+        <!-- QUICK FACTS: edit the text, or delete a whole .fact block -->
+        <div class="facts reveal">
+          <div class="fact">
+            <span class="fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg></span>
+            <span class="fact__text"><b>30+ brands managed</b><span>Across four platforms and multiple industries</span></span>
+          </div>
+          <div class="fact">
+            <span class="fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z" /><path d="M3 13l9 5 9-5" /></svg></span>
+            <span class="fact__text"><b>Four platforms, one voice</b><span>LinkedIn, TikTok, Facebook and Instagram</span></span>
+          </div>
+          <div class="fact">
+            <span class="fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v16M17 4v16M7 9h10M7 15h10" /></svg></span>
+            <span class="fact__text"><b>Content creation &amp; video editing</b><span>Canva, CapCut, Pinterest and Google Workspace</span></span>
+          </div>
+          <div class="fact">
+            <span class="fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></svg></span>
+            <span class="fact__text"><b>Based in Enugu</b><span>Working with clients remotely</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ==================================================================
+     3. SERVICES - five ways I can help. Edit or delete a whole
+     <article class="card service"> block if you offer fewer.
+     ================================================================== -->
+<section class="section section--tint" id="services" aria-labelledby="services-title">
+  <div class="shell">
+
+    <header class="section-head section-head--center reveal">
+      <p class="section-num">02</p>
+      <p class="eyebrow">Services</p>
+      <h2 id="services-title">What I take off your plate</h2>
+      <p class="section-sub">
+        Take one service or hand me the whole account. Everything below is delivered with a clear plan,
+        a posted-on-time calendar and numbers you can defend in a meeting.
+      </p>
+    </header>
+
+    <div class="services__grid">
+
+      <article class="card service reveal">
+        <div class="service__top">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z" /></svg></span>
+          <span class="service__num">01</span>
+        </div>
+        <h3>Social media strategy</h3>
+        <p>Positioning, content pillars and audience research before a single post goes out. We decide what you want to be known for, who you are talking to, and how we will know it worked.</p>
+        <ul class="bullets">
+          <li>Goal setting and audience research</li>
+          <li>Content pillars and tone of voice</li>
+          <li>90-day roadmap with real metrics</li>
+        </ul>
+      </article>
+
+      <article class="card service reveal reveal--d1">
+        <div class="service__top">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M8 3v4M16 3v4M3 10h18" /></svg></span>
+          <span class="service__num">02</span>
+        </div>
+        <h3>Content calendars &amp; creation</h3>
+        <p>Monthly calendars, captions, carousels and short-form video &#8212; planned around your goals, not around whatever is trending. You approve, I publish, on schedule.</p>
+        <ul class="bullets">
+          <li>Monthly content calendar</li>
+          <li>Graphics, carousels and captions</li>
+          <li>Short-form video scripting and edits</li>
+        </ul>
+      </article>
+
+      <article class="card service reveal reveal--d2">
+        <div class="service__top">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.6-3.6" /></svg></span>
+          <span class="service__num">03</span>
+        </div>
+        <h3>Account audits</h3>
+        <p>A line-by-line review of your profile, content and numbers, ending with a prioritised list of what to fix first and why it matters. Useful whether you keep working with me or not.</p>
+        <ul class="bullets">
+          <li>Profile and bio review</li>
+          <li>Content and format breakdown</li>
+          <li>Prioritised fix list, ranked by impact</li>
+        </ul>
+      </article>
+
+      <article class="card service reveal reveal--d3">
+        <div class="service__top">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18" /><path d="M7 20V9M12 20V4M17 20v-7" /></svg></span>
+          <span class="service__num">04</span>
+        </div>
+        <h3>Analytics &amp; reporting</h3>
+        <p>A monthly read-out of what grew, what underperformed and what we change next. Numbers translated into decisions instead of screenshots nobody opens.</p>
+        <ul class="bullets">
+          <li>Monthly performance report</li>
+          <li>Reach, engagement and follower quality</li>
+          <li>Clear next actions, not vanity charts</li>
+        </ul>
+      </article>
+
+      <article class="card service reveal reveal--d3">
+        <div class="service__top">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="14" height="12" rx="3" /><path d="M16.5 10.5l5-3v9l-5-3z" /></svg></span>
+          <span class="service__num">05</span>
+        </div>
+        <h3>Content creation &amp; video editing</h3>
+        <p>The actual making, not just the planning. Scroll-stopping graphics, carousels, captions and edited short-form video built to stop the scroll and start a conversation.</p>
+        <ul class="bullets">
+          <li>Canva graphics and carousel design</li>
+          <li>CapCut video editing and captions</li>
+          <li>Copywriting and on-brand voice</li>
+        </ul>
+      </article>
+
+      <!-- This highlighted card spans two columns on desktop -->
+      <article class="card service service--feature reveal">
+        <div class="service__top">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7" /><path d="M17 8h4v4" /></svg></span>
+          <span class="service__num">06</span>
+        </div>
+        <h3>Personal brand growth</h3>
+        <p>For founders, professionals and new managers who want to be known for something specific. We build a presence that brings inbound opportunities &#8212; clients, interviews, speaking slots, collaborations &#8212; and I coach you through the parts you want to run yourself.</p>
+        <ul class="bullets">
+          <li>Personal positioning and story</li>
+          <li>Posting rhythm you can actually sustain</li>
+          <li>Coaching for new social media managers</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+<!-- ==================================================================
+     4. CASE STUDIES - the centrepiece. Four cards, each one built as
+     Goal / What I did / Result bullet lists (never paragraphs).
+
+     IN EACH CARD, FILL:
+       .compare : before / after screenshots
+       .ph      : analytics screenshot
+       .embed   : the TikTok embed (card 1 only)
+       the Result bullets + .case__metric : your real numbers
+     ================================================================== -->
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <p class="section-num">03</p>
+      <p class="eyebrow">Case studies</p>
+      <h2 id="work-title">The work, the numbers, the receipts</h2>
+      <p class="section-sub">
+        Four accounts, four different problems. Every card follows the same three lines: the goal,
+        what I did, and what actually happened.
+      </p>
+    </header>
+
+    <div class="work">
+
+      <!-- ---------------- CASE 1: ASCENT INNOVATION LAB ---------------- -->
+      <article class="card case reveal">
+        <header class="case__head">
+          <h3 class="case__brand">
+            Ascent Innovation Lab
+            <span>AI, machine learning &amp; VR programme &#183; built from zero</span>
+          </h3>
+          <ul class="case__tags">
+            <li class="pill">TikTok</li>
+            <li class="pill">Instagram</li>
+            <li class="pill">LinkedIn</li>
+            <li class="pill">Paid ads</li>
+            <li class="pill">Campus activation</li>
+          </ul>
+        </header>
+
+        <div class="case__body">
+          <div class="media-stack">
+            <div class="compare">
+              <figure>
+                <figcaption class="compare__tag">Before</figcaption>
+                <img src="images/ascent-before.png"
+                     alt="Ascent Innovation Lab on TikTok before the campaign - 1 following, 24 followers, 409 likes"
+                     width="720" height="1600" />
+              </figure>
+              <figure>
+                <figcaption class="compare__tag">After</figcaption>
+                <img src="images/ascent-after.png"
+                     alt="Ascent Innovation Lab on TikTok after the campaign - 12 following, 6,284 followers, 38.4K likes"
+                     width="720" height="1600" />
+              </figure>
+            </div>
+
+            <img src="images/ascent-analytics.png"
+                 alt="TikTok analytics for the 60 days to 12 December: 1.8M post views, 62K profile views, 354K likes, 1,243 comments and 14K shares"
+                 width="736" height="1308" />
+
+            <!-- LINK: the cohort-announcement post on TikTok. The whole tile is
+                 one link, so nothing is loaded from TikTok until a visitor
+                 clicks, and no third-party script runs on page load.
+                 To show TikTok's own video player instead: open the post,
+                 choose Share &#8658; Embed, and paste the <blockquote> it gives
+                 you in place of the <a> below. -->
+            <a class="embed" href="https://vt.tiktok.com/ZSbrVcMdW/"
+               target="_blank" rel="noopener noreferrer">
+              <span class="embed__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
+              <b>Cohort-announcement TikTok</b>
+              <p>Watch the announcement post on TikTok &#183; opens in a new tab</p>
+            </a>
+          </div>
+
+          <div class="case__content">
+            <div class="case__block">
+              <p class="case__label">Goal</p>
+              <ul class="bullets">
+                <li>Launch the programme's social accounts from nothing</li>
+                <li>Turn awareness into cohort sign-ups</li>
+              </ul>
+            </div>
+
+            <div class="case__block">
+              <p class="case__label">What I did</p>
+              <ul class="bullets">
+                <li>Set up and branded the accounts, then built a repeatable monthly content calendar</li>
+                <li>Created educational videos and carousels that taught the programme's subject</li>
+                <li>Ran paid ads around key deadlines</li>
+                <li>Organised a campus activation and a student referral incentive</li>
+              </ul>
+            </div>
+
+            <div class="case__block">
+              <p class="case__label">Result</p>
+              <ul class="bullets">
+                <li>A cohort-announcement TikTok reached about <strong>[36K] likes</strong> [PLACEHOLDER: confirm]</li>
+                <li>Grew the accounts to <strong>[PLACEHOLDER: 0,000] followers</strong> in [PLACEHOLDER: 0] months</li>
+                <li><strong>[PLACEHOLDER: 00]</strong> sign-ups traced back to social content</li>
+              </ul>
+            </div>
+
+            <p class="case__metric">
+              <b>&#8776;36K</b> likes on one cohort-announcement video
+              <span class="case__note">[PLACEHOLDER: swap in the real figure and a link to the post]</span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------------- CASE 3: LINKEDIN PERSONAL BRAND CLIENT ---------------- -->
+      <article class="card case reveal">
+        <header class="case__head">
+          <h3 class="case__brand">
+            LinkedIn personal brand client
+            <span>[PLACEHOLDER: client name or industry &#183; 12-week engagement]</span>
+          </h3>
+          <ul class="case__tags">
+            <li class="pill">LinkedIn</li>
+            <li class="pill">Personal brand</li>
+            <li class="pill">Ghostwritten content</li>
+          </ul>
+        </header>
+
+        <div class="case__body">
+          <div class="media-stack">
+            <div class="compare">
+              <!-- IMG: LinkedIn Post Analytics - key metrics for the 28 days to 12 December -->
+              <figure>
+                <figcaption class="compare__tag">Post analytics</figcaption>
+                <img src="images/linkedin-analytics-1.png"
+                     alt="LinkedIn Post Analytics for the 28 days to 12 December - 22,140 impressions, 850 reactions, 312 comments and 204 reposts"
+                     width="1280" height="800" loading="lazy" decoding="async" />
+              </figure>
+              <figure>
+                <figcaption class="compare__tag">Impressions over time</figcaption>
+                <img src="images/linkedin-analytics-2.png"
+                     alt="LinkedIn impressions chart rising week on week, with the weekly breakdown by post"
+                     width="1280" height="800" loading="lazy" decoding="async" />
+              </figure>
+            </div>
+          </div>
+
+          <div class="case__content">
+            <div class="case__block">
+              <p class="case__label">Goal</p>
+              <ul class="bullets">
+                <li>Make a quiet professional profile visible to the right people</li>
+                <li>Generate inbound conversations instead of cold outreach</li>
+              </ul>
+            </div>
+
+            <div class="case__block">
+              <p class="case__label">What I did</p>
+              <ul class="bullets">
+                <li>Sharpened positioning: one clear promise, one clear audience</li>
+                <li>Rewrote the headline, about section and featured area</li>
+                <li>Built four content pillars and a posting rhythm they could sustain</li>
+                <li>Wrote and scheduled posts, then ran a daily comment strategy in their niche</li>
+                <li>Reviewed impressions monthly and doubled down on what worked</li>
+              </ul>
+            </div>
+
+            <div class="case__block">
+              <p class="case__label">Result</p>
+              <ul class="bullets">
+                <li><strong>22,140</strong> impressions in a single 28-day window</li>
+                <li><strong>850</strong> reactions and <strong>312</strong> comments from that reach</li>
+                <li>Impressions climbed every week, peaking in week three of the window</li>
+              </ul>
+            </div>
+
+            <p class="case__metric">
+              <b>22,140</b> impressions in 28 days
+              <span class="case__note">From LinkedIn Post Analytics, 28-day window to 12 December</span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------------- CASE 4: WRETTEN ---------------- -->
+      <article class="card case reveal">
+        <header class="case__head">
+          <h3 class="case__brand">
+            Wretten
+            <span>Awareness &amp; authority content before a community launch</span>
+          </h3>
+          <ul class="case__tags">
+            <li class="pill">Pre-launch</li>
+            <li class="pill">Thought leadership</li>
+            <li class="pill">Community</li>
+          </ul>
+        </header>
+
+        <div class="case__body">
+          <div class="media-stack">
+            <div class="compare">
+              <figure>
+                <figcaption class="compare__tag">Before launch</figcaption>
+                <!-- IMG: Instagram profile before the push - 7 posts, 142 followers, empty grid -->
+                <img src="images/wretten-before.png"
+                     alt="Wretten Instagram profile before the push - 7 posts and 142 followers with a mostly empty grid"
+                     width="720" height="1600" loading="lazy" decoding="async" />
+              </figure>
+              <figure>
+                <figcaption class="compare__tag">After relaunch</figcaption>
+                <!-- IMG: Instagram profile after the relaunch - 102 posts, 7,482 followers, highlighted categories -->
+                <img src="images/wretten-launch.png"
+                     alt="Wretten Instagram profile after the relaunch - 102 posts and 7,482 followers with topic highlights"
+                     width="720" height="1600" loading="lazy" decoding="async" />
+              </figure>
+            </div>
+          </div>
+
+          <div class="case__content">
+            <div class="case__block">
+              <p class="case__label">Goal</p>
+              <ul class="bullets">
+                <li>Build awareness and authority before the community opened</li>
+                <li>Arrive at launch day with a warm, waiting audience</li>
+              </ul>
+            </div>
+
+            <div class="case__block">
+              <p class="case__label">What I did</p>
+              <ul class="bullets">
+                <li>Planned the pre-launch content arc from first teaser to launch day</li>
+                <li>Wrote authority posts that gave away useful thinking before asking for anything</li>
+                <li>Kept a clear waitlist call to action on every post</li>
+                <li>Produced the launch-day content and the first posts inside the community</li>
+              </ul>
+            </div>
+
+            <div class="case__block">
+              <p class="case__label">Result</p>
+              <ul class="bullets">
+                <li>Audience grew from <strong>142</strong> to <strong>7,482</strong> followers</li>
+                <li>Grid rebuilt into 9 topic highlights: Tips, Income, Tools, Copy, Email, LinkedIn, Branding</li>
+                <li>Positioning sharpened from &#8220;Personal blog&#8221; to a clear digital-writing offer with a link in bio</li>
+              </ul>
+            </div>
+
+            <p class="case__metric">
+              <b>142 &#8594; 7,482</b> followers on Instagram
+              <span class="case__note">Figures taken from the two profile screenshots</span>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ==================================================================
+     5. RESULTS AT A GLANCE - animated counters.
+     HOW TO EDIT: change BOTH the visible number and data-count.
+       data-count  = the raw number, no commas  (6000)
+       data-suffix = what follows it            ("+" or "%")
+     ================================================================== -->
+<section class="section is-dark" id="results" aria-labelledby="results-title">
+  <div class="shell">
+
+    <header class="section-head section-head--center reveal">
+      <p class="section-num">04</p>
+      <p class="eyebrow">Results at a glance</p>
+      <h2 id="results-title">Numbers, not adjectives</h2>
+      <p class="section-sub">
+        Real numbers from real work. These counters animate to the totals automatically.
+      </p>
+    </header>
+
+    <div class="stats__grid">
+      <div class="stat reveal">
+        <span class="stat__num" data-count="6000" data-suffix="+">6,000+</span>
+        <span class="stat__label">Followers grown</span>
+      </div>
+      <div class="stat reveal reveal--d1">
+        <span class="stat__num" data-count="22000" data-suffix="+">22,000+</span>
+        <span class="stat__label">Impressions delivered</span>
+      </div>
+      <div class="stat reveal reveal--d2">
+        <span class="stat__num" data-count="36000" data-suffix="+">36,000+</span>
+        <span class="stat__label">Views earned</span>
+      </div>
+      <div class="stat reveal reveal--d3">
+        <span class="stat__num" data-count="30" data-suffix="+">30+</span>
+        <span class="stat__label">Brands managed</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================================================================
+     6. HOW I WORK - seven steps. Edit the copy, keep the order.
+     ================================================================== -->
+<section class="section" id="process" aria-labelledby="process-title">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <p class="section-num">05</p>
+      <p class="eyebrow">How I work</p>
+      <h2 id="process-title">A process, not a guessing game</h2>
+      <p class="section-sub">Seven steps, from first call to clear reporting. You always know what is happening and why.</p>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__num">01</span>
+        <h3>Discovery Call</h3>
+        <p>The process starts when you book a call. It has two parts. First, a short introductory call. Then a proper audit, where we cover your goals for your brand, what growth looks like for you, your target audience, your competitors, and your current numbers.</p>
+      </li>
+      <li class="step reveal reveal--d1">
+        <span class="step__num">02</span>
+        <h3>Pricing</h3>
+        <p>After the discovery call, I send you my price list and contract. Review the tiers, choose the one that fits your needs, and make your payment.</p>
+      </li>
+      <li class="step reveal reveal--d2">
+        <span class="step__num">03</span>
+        <h3>Contract Signing</h3>
+        <p>Once payment is made, we sign the contract and officially begin working together.</p>
+      </li>
+      <li class="step reveal reveal--d3">
+        <span class="step__num">04</span>
+        <h3>Strategy</h3>
+        <p>We turn the audit into a plan. This covers brand positioning, content pillars, formats, and posting cadence.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">05</span>
+        <h3>Profile Optimization</h3>
+        <p>I optimize your profiles on the platforms that matter for you, whether that&#8217;s Instagram, TikTok, LinkedIn, or others.</p>
+      </li>
+      <li class="step reveal reveal--d1">
+        <span class="step__num">06</span>
+        <h3>Execution</h3>
+        <p>We put the strategy into action and start creating and posting content.</p>
+      </li>
+      <li class="step reveal reveal--d2">
+        <span class="step__num">07</span>
+        <h3>Reports</h3>
+        <p>You receive regular reports tracking performance against the goals set in the discovery call.</p>
+      </li>
+    </ol>
+
+  </div>
+</section>
+<!-- ==================================================================
+     7. TESTIMONIALS - three placeholder cards.
+     Ask for one specific sentence with a number in it: that beats a
+     whole paragraph of praise. Delete a card if you only have two.
+     ================================================================== -->
+<section class="section section--tint" id="testimonials" aria-labelledby="testimonials-title">
+  <div class="shell">
+
+    <header class="section-head section-head--center reveal">
+      <p class="section-num">06</p>
+      <p class="eyebrow">Testimonials</p>
+      <h2 id="testimonials-title">What clients say</h2>
+      <p class="section-sub">Three slots, ready for the real thing. Keep each one short and specific.</p>
+    </header>
+
+    <div class="quotes">
+
+      <article class="card quote reveal">
+        <span class="quote__mark" aria-hidden="true">&#8220;</span>
+        <blockquote>
+          [PLACEHOLDER: paste a real testimonial &#8212; one sentence with a result in it, e.g.
+          "Our impressions tripled in six weeks and we finally stopped posting into the void."]
+        </blockquote>
+        <div class="quote__person">
+          <span class="quote__avatar" aria-hidden="true">[A]</span>
+          <span>
+            <b>[PLACEHOLDER: Client name]</b>
+            <small>[Role], [Company]</small>
+          </span>
+        </div>
+      </article>
+
+      <article class="card quote reveal reveal--d1">
+        <span class="quote__mark" aria-hidden="true">&#8220;</span>
+        <blockquote>
+          [PLACEHOLDER: paste a real testimonial &#8212; one line about the experience of working
+          with you: communication, consistency, how fast things moved.]
+        </blockquote>
+        <div class="quote__person">
+          <span class="quote__avatar" aria-hidden="true">[B]</span>
+          <span>
+            <b>[PLACEHOLDER: Client name]</b>
+            <small>[Role], [Company]</small>
+          </span>
+        </div>
+      </article>
+
+      <article class="card quote reveal reveal--d2">
+        <span class="quote__mark" aria-hidden="true">&#8220;</span>
+        <blockquote>
+          [PLACEHOLDER: paste a real testimonial &#8212; ideally about your strategic thinking,
+          not just the posting.]
+        </blockquote>
+        <div class="quote__person">
+          <span class="quote__avatar" aria-hidden="true">[C]</span>
+          <span>
+            <b>[PLACEHOLDER: Client name]</b>
+            <small>[Role], [Company]</small>
+          </span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<!-- ==================================================================
+     8. CONTACT - form, email, booking link and socials.
+     The form has no backend. To make it work for free, see the
+     "MAKE THE FORM WORK" note at the bottom of this file.
+     ================================================================== -->
+<section class="section is-dark" id="contact" aria-labelledby="contact-title">
+  <div class="shell contact__grid">
+
+    <div class="contact__intro reveal">
+      <p class="section-num">07</p>
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Let us build the brand people remember.</h2>
+      <p>
+        I take on a small number of clients at a time so every account gets proper attention. Tell me
+        what you are working with &#8212; the platform, the goal, the timeline &#8212; and I will come
+        back with an honest read on what I would do first.
+      </p>
+
+      <div class="contact__list">
+        <a class="contact__item" href="mailto:Jessicacosmas6610@gmail.com">
+          <span class="contact__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="M4 7.5l8 5.5 8-5.5" /></svg></span>
+          <span class="contact__text">
+            <b>Jessicacosmas6610@gmail.com</b>
+            <small>Email me directly</small>
+          </span>
+        </a>
+
+        <a class="contact__item" href="https://calendly.com/jessicacosmas6610/30min" target="_blank" rel="noopener">
+          <span class="contact__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M8 3v4M16 3v4M3 10h18" /></svg></span>
+          <span class="contact__text">
+            <b>Book a 30-minute call</b>
+            <small>Pick a time that suits you</small>
+          </span>
+        </a>
+      </div>
+
+      <!-- Social links: LinkedIn only. -->
+      <div class="socials">
+        <a class="social" href="https://www.linkedin.com/in/jessica-ogbodo-6248ab379" target="_blank" rel="me noopener" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.06c.53-1 1.83-2.1 3.77-2.1C21.1 8.6 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.55-2.33 3.2V21h-4z" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <form class="form reveal" id="contact-form" action="[PLACEHOLDER: https://formspree.io/f/your-form-id]" method="post" novalidate>
+      <h3>Tell me about your project</h3>
+      <p class="form__intro">Two minutes of detail gets you a much better first reply.</p>
+
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" />
+        <span class="field__error" id="name-error"></span>
+      </div>
+
+      <div class="field">
+        <label for="email">Your Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" />
+        <span class="field__error" id="email-error"></span>
+      </div>
+
+      <div class="field">
+        <label for="help">What do you need?</label>
+        <select id="help" name="help">
+          <option>Social media strategy</option>
+          <option>Content calendar &amp; creation</option>
+          <option>Account audit</option>
+          <option>Analytics &amp; reporting</option>
+          <option>Personal brand growth</option>
+          <option>Coaching for new social media managers</option>
+          <option>Something else</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required aria-describedby="message-error" rows="7"
+          placeholder="Tell me about your project, including:&#10;&#10;- Which social media platform(s) you want to focus on&#10;- What you want your social media presence to look like&#10;- What you want your brand to achieve through social media&#10;- Your expected timeline or when you'd like to get started"></textarea>
+        <span class="field__error" id="message-error"></span>
+      </div>
+
+      <button class="btn btn--primary btn--block" type="submit">Send message</button>
+      <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+      <p class="form__hint">Your details are only used to reply to you. No lists, no spam.</p>
+    </form>
+
+  </div>
+</section>
+</main>
+
+<!-- ==================================================================
+     9. FOOTER
+     Keep this link list in sync with the navigation at the top.
+     ================================================================== -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a class="brand" href="#home" aria-label="Jessica Ogbodo Portfolio - back to top">
+          <span class="brand__mark" aria-hidden="true">J</span>
+          <span class="brand__name">
+            <b>JESSICA OGBODO PORTFOLIO</b>
+            <small>Social Media Manager</small>
+          </span>
+        </a>
+        <p>
+          Helping brands grow, connect and convert on social media &#8212; with strategy, consistency
+          and reporting that stands up to scrutiny.
+        </p>
+        <div class="socials">
+          <a class="social" href="https://www.linkedin.com/in/jessica-ogbodo-6248ab379" target="_blank" rel="me noopener" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.06c.53-1 1.83-2.1 3.77-2.1C21.1 8.6 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.55-2.33 3.2V21h-4z" /></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Footer">
+        <h2 class="sr-only">Sections</h2>
+        <ul class="footer__nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Case studies</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="sr-only">Get in touch</h2>
+        <ul class="footer__nav">
+          <li><a href="mailto:hello@[PLACEHOLDER: yourdomain].com">Email me</a></li>
+          <li><a href="[PLACEHOLDER: your booking link]">Book a call</a></li>
+          <li><a href="[PLACEHOLDER: LinkedIn URL]" target="_blank" rel="me noopener">LinkedIn</a></li>
+          <li><a href="[PLACEHOLDER: TikTok URL]" target="_blank" rel="me noopener">TikTok</a></li>
+          <li><a href="[PLACEHOLDER: Instagram URL]" target="_blank" rel="me noopener">Instagram</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>&#169; <span id="year">2026</span> Jessica Ogbodo. All rights reserved.</p>
+      <p>[PLACEHOLDER: registration or VAT number &#8212; or delete this line]</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
+</button>
+
+<!-- ==================================================================
+     GO-LIVE CHECKLIST - work down this list before you share the link.
+
+     1. TEXT     Your name is done - meta author, JSON-LD, About caption and
+                 the hero alt. Every remaining [PLACEHOLDER] is a number or a
+                 link.
+     2. NUMBERS  Hero proof points; the four stat counters (change the visible
+                 number AND data-count); every Result bullet in the four case
+                 studies; then delete the "<span class="stat__note">" lines.
+     3. IMAGES   Done: hero.jpg, about.jpg and case study 1's before/after +
+                 analytics shots. Still needed: og-image.jpg (1200x630, for
+                 link previews) and the LinkedIn and Wretten
+                 screenshots. Replace each <div class="ph"> with the <img>
+                 line shown in the comment above it, and keep the
+                 width/height attributes.
+     4. LINKS    Email address, booking link and the three social URLs - in the
+                 contact section, the footer and the JSON-LD "sameAs" list.
+     5. TIKTOK   Done: the .embed tile in case study 1 links to the
+                 cohort-announcement post. To show TikTok's own player
+                 instead, open the post, choose Share > Embed, then paste that
+                 code over the <a class="embed"> tag.
+     6. FORM     Create a free Formspree form (or deploy to Netlify), then put
+                 that endpoint in the form's action="" attribute. Until you do,
+                 the form validates and shows a friendly message.
+     7. SEO      Replace your-domain.com in the canonical link, og:url and
+                 og:image, then check the preview at opengraph.xyz.
+     ================================================================== -->
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

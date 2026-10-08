@@ -1,0 +1,15 @@
+# Tailwind toolchain - never upload this.
+# assets/css/site.css IS committed on purpose, so the site can be
+# deployed (e.g. dragged onto Netlify) without running npm install.
+node_modules/
+
+# `npm run pack` output - a clean copy for uploading. Regenerate at will.
+dist/
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+.idea/
+*.log

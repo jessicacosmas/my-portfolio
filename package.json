@@ -1,0 +1,16 @@
+{
+  "name": "a-purple-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Purple - social media manager portfolio. Tailwind CSS v4 is the source of truth (src/input.css); assets/css/site.css is the compiled bundle and IS committed so the site can still be deployed by dragging the folder.",
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o assets/css/site.css --minify",
+    "dev": "tailwindcss -i src/input.css -o assets/css/site.css --watch",
+    "serve": "python -m http.server 8000",
+    "pack": "node tools/pack.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

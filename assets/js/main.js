@@ -136,14 +136,16 @@
     }
 
     /* ---------- 7. Contact form -------------------------------------
-       The form is validated on the spot. It has no backend yet: paste a
-       free Formspree or Netlify endpoint into the form's action=""
-       attribute and the browser will post to it normally. Until then we
-       show a friendly message instead of a broken page.               */
+       Validates in the browser, then posts to Formspree with fetch so
+       the visitor stays on the page and gets an inline reply in
+       #form-status. Paste your endpoint into the form's action=""
+       attribute in index.html. Until you do, we show a friendly
+       message instead of a broken page.                              */
     var form = document.getElementById('contact-form');
     if (form) {
       var status = document.getElementById('form-status');
-      var action = form.getAttribute('action') || '';
+      var submitBtn = form.querySelector('[type="submit"]');
+      var action = (form.getAttribute('action') || '').trim();
       var endpointReady = action.indexOf('http') === 0 && action.indexOf('[PLACEHOLDER') === -1;
 
       function setStatus(message, state) {
@@ -181,7 +183,9 @@
         return setFieldError(input, '');
       }
 
-      var inputs = form.querySelectorAll('input, textarea');
+      // Only the real fields inside .field wrappers - this leaves out the
+      // Formspree _subject and the _gotcha honeypot.
+      var inputs = form.querySelectorAll('.field input, .field textarea');
       inputs.forEach(function (input) {
         input.addEventListener('blur', function () { validateField(input); });
         input.addEventListener('input', function () {
@@ -190,27 +194,71 @@
         });
       });
 
+      function clearErrors() {
+        inputs.forEach(function (input) { setFieldError(input, ''); });
+      }
+
+      function setBusy(busy) {
+        if (!submitBtn) { return; }
+        submitBtn.disabled = busy;
+        submitBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
+        submitBtn.textContent = busy ? 'Sending\u2026' : 'Send message';
+      }
+
+      // Formspree replies {errors:[{message}]} or {message:"..."} on failure.
+      function serverMessage(body) {
+        if (body && Array.isArray(body.errors) && body.errors.length) {
+          return body.errors.map(function (e) { return e.message; }).join(' ');
+        }
+        if (body && typeof body.message === 'string' && body.message) { return body.message; }
+        return 'Something went wrong sending that. Please email me directly instead.';
+      }
+
       form.addEventListener('submit', function (event) {
+        // Always take over: without JS the browser posts to action="" normally.
+        event.preventDefault();
+
         var firstInvalid = null;
         inputs.forEach(function (input) {
           if (!validateField(input) && !firstInvalid) { firstInvalid = input; }
         });
 
         if (firstInvalid) {
-          event.preventDefault();
           firstInvalid.focus();
           setStatus('Please check the highlighted fields and try again.', 'error');
           return;
         }
 
         if (!endpointReady) {
-          event.preventDefault();
           setStatus('Thank you - your details look good. This form is not connected to an inbox yet, so please email me directly and I will reply within 24 hours.', 'success');
           form.reset();
+          clearErrors();
           return;
         }
 
-        setStatus('Sending your message...', 'info');
+        setBusy(true);
+        setStatus('Sending your message\u2026', 'info');
+
+        fetch(action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) {
+            return response.json().catch(function () { return null; }).then(function (body) {
+              if (response.ok) {
+                form.reset();
+                clearErrors();
+                setStatus('Thank you - your message is on its way. I will reply within 24 hours.', 'success');
+              } else {
+                setStatus(serverMessage(body), 'error');
+              }
+            });
+          })
+          .catch(function () {
+            setStatus('I could not reach the form service just now. Please email me directly instead.', 'error');
+          })
+          .then(function () { setBusy(false); });
       });
     }
   })();

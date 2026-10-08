@@ -201,7 +201,7 @@ underneath it:
 | 875 | helper text under the booking item | Delete it once the link is real |
 | 883, 886, 889 | the three social `href`s | LinkedIn, TikTok, Instagram URLs |
 | 894 | reply-time sentence | Keep, edit or delete |
-| 897 | `<form action="">` | Your Formspree endpoint — see section 5 |
+| 857 | form `action` attribute | Your Formspree endpoint — see section 5 |
 
 ### 3.8 Footer (lines 946–1006)
 
@@ -275,10 +275,22 @@ To make it deliver to your inbox:
 **Option A — Formspree (free tier, works anywhere)**
 
 1. Sign up at `formspree.io` and create a new form.
-2. Copy the endpoint it gives you, e.g. `https://formspree.io/f/abcdwxyz`.
-3. Paste it into the `action=""` attribute of the form on **line 897**, replacing the
-   `[PLACEHOLDER: …]` value.
-4. Submit the live form once to confirm it arrives.
+2. Set the delivery email (where enquiries land) and copy the endpoint it gives you, e.g.
+   `https://formspree.io/f/abcdwxyz`.
+3. Paste it into the `action=""` attribute of the `<form id="contact-form">` tag in `index.html`,
+   replacing the whole `[PLACEHOLDER: …]` value. That is the only change needed — the script
+   picks it up automatically.
+4. Deploy, then submit the live form once to confirm it arrives.
+5. Add your deployed domain under the form's **Settings → Domains** so only your own site can
+   post to it.
+
+The form already sends two Formspree extras: a hidden `_subject` ("New portfolio enquiry") so the
+email has a readable title, and a hidden `_gotcha` honeypot field that filters out bots.
+
+Submission happens over `fetch`, so the visitor stays on your page and the reply appears inline in
+`#form-status` — no redirect to Formspree's thank-you page. If the request fails, an error message
+asks them to email you directly. With JavaScript disabled the browser falls back to a normal
+`POST` to the same endpoint.
 
 **Option B — Netlify Forms (only if you deploy on Netlify)**
 
@@ -286,8 +298,8 @@ Add `netlify` to the `<form>` tag plus a hidden
 `<input type="hidden" name="form-name" value="contact">` field, and Netlify captures submissions
 in its own dashboard. Formspree is simpler if you are unsure.
 
-The script auto-detects the difference (`assets/js/main.js` lines 146–147): as long as `action`
-starts with `http` and no longer contains `[PLACEHOLDER`, it lets the browser post normally.
+The script auto-detects the difference (`assets/js/main.js`, section 7 — the `endpointReady` check):
+as long as `action` starts with `http` and no longer contains `[PLACEHOLDER`, it posts to Formspree.
 
 ---
 

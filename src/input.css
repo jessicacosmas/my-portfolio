@@ -223,6 +223,8 @@
   .btn--gold{ @apply bg-gold text-plum }
   .btn--light{ @apply bg-white text-plum }
   .btn--block{ @apply w-full }
+  .btn:disabled{ @apply cursor-wait opacity-70 }
+  .btn:disabled:hover{ @apply bg-purple }
 
   /* ---------------- pills, cards, icon tiles ---------------- */
   .pill{

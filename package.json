@@ -7,10 +7,12 @@
     "build": "tailwindcss -i src/input.css -o assets/css/site.css --minify",
     "dev": "tailwindcss -i src/input.css -o assets/css/site.css --watch",
     "serve": "python -m http.server 8000",
-    "pack": "node tools/pack.mjs"
+    "pack": "node tools/pack.mjs",
+    "test": "node tools/form-test.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
+    "jsdom": "^29.1.1",
     "tailwindcss": "^4.3.3"
   }
 }

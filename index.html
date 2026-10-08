@@ -854,9 +854,14 @@
       </div>
     </div>
 
-    <form class="form reveal" id="contact-form" action="[PLACEHOLDER: https://formspree.io/f/your-form-id]" method="post" novalidate>
+    <form class="form reveal" id="contact-form" action="https://formspree.io/f/xwlvonjy" method="POST" novalidate>
       <h3>Tell me about your project</h3>
       <p class="form__intro">Two minutes of detail gets you a much better first reply.</p>
+
+      <!-- Formspree extras: a readable email subject, plus a honeypot
+           bots fill in and humans never see. -->
+      <input type="hidden" name="_subject" value="New portfolio enquiry" />
+      <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
       <div class="field">
         <label for="name">Your name</label>
@@ -987,6 +992,7 @@
      6. FORM     Create a free Formspree form (or deploy to Netlify), then put
                  that endpoint in the form's action="" attribute. Until you do,
                  the form validates and shows a friendly message.
+                 Paste it here ->  action="[PLACEHOLDER: ...]" on #contact-form.
      7. SEO      Replace your-domain.com in the canonical link, og:url and
                  og:image, then check the preview at opengraph.xyz.
      ================================================================== -->
